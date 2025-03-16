@@ -8,6 +8,7 @@
 </head>
 <body>
   <div class="timer-container">
+    <h1 class="heading">ДО НДЯ РОДЖЕНИЯ BASOK</h1> <!-- Добавленная надпись -->
     <div class="timer">
       <div class="time-block">
         <span class="time" id="days">00</span>
@@ -55,74 +56,3 @@
   </script>
 </body>
 </html>
-CSS:
-css
-Копировать
-/* Общие стили */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f7fb;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.timer-container {
-  text-align: center;
-}
-
-.timer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Стили для блоков времени */
-.time-block {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.time {
-  font-size: 48px;
-  font-weight: bold;
-  color: #3498db;
-  transition: transform 0.3s ease-in-out;
-}
-
-.time:hover {
-  transform: scale(1.2);
-}
-
-.label {
-  font-size: 16px;
-  color: #7f8c8d;
-  margin-top: 5px;
-  text-transform: uppercase;
-}
-
-/* Анимация для изменения времени */
-@keyframes countdown {
-  0% {
-    transform: scale(1);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-}
-
-.time {
-  animation: countdown 0.5s ease-out;
-}
