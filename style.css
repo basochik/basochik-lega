@@ -8,8 +8,19 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  flex-direction: column; /* Для вертикального расположения элементов */
 }
 
+/* Стили для заголовка */
+.heading {
+  font-size: 32px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px; /* Отступ снизу */
+  text-align: center;
+}
+
+/* Контейнер для таймера */
 .timer-container {
   text-align: center;
 }
