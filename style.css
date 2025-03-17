@@ -1,79 +1,34 @@
-/* Общие стили */
+/* Основные стили для страницы */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f7fb;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  flex-direction: column; /* Для вертикального расположения элементов */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
 }
 
-/* Стили для заголовка */
-.heading {
-  font-size: 32px;
-  font-weight: bold;
-  color: #2c3e50;
-  margin-bottom: 20px; /* Отступ снизу */
-  text-align: center;
+#timer-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
 }
 
-/* Контейнер для таймера */
-.timer-container {
-  text-align: center;
+#timer {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.timer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+#timer.green {
+    background-color: #28a745;
+    color: white;
+    border: 2px solid #218838;
 }
 
-/* Стили для блоков времени */
-.time-block {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.time {
-  font-size: 48px;
-  font-weight: bold;
-  color: #3498db;
-  transition: transform 0.3s ease-in-out;
-}
-
-.time:hover {
-  transform: scale(1.2);
-}
-
-.label {
-  font-size: 16px;
-  color: #7f8c8d;
-  margin-top: 5px;
-  text-transform: uppercase;
-}
-
-/* Анимация для изменения времени */
-@keyframes countdown {
-  0% {
-    transform: scale(1);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-}
-
-.time {
-  animation: countdown 0.5s ease-out;
+#timer p {
+    margin: 0;
 }
