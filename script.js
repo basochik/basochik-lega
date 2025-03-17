@@ -6,7 +6,7 @@ function countdownToMarch17() {
     // Проверка, наступил ли 17 марта
     if (currentDate >= targetDate) {
         // Если сегодня 17 марта или позже, помечаем как "Сегодня"
-        document.getElementById("timer").innerHTML = "<p>Сегодня</p>";
+        document.getElementById("timer").innerHTML = "<p>сиводня</p>";
         document.getElementById("timer").classList.add("green");
     } else {
         // Разница во времени
