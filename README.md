@@ -1,8 +1,18 @@
-# Countdown Timer
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таймер до 17 марта</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="timer-container">
+        <div id="timer">
+            <p id="countdown"></p>
+        </div>
+    </div>
 
-Этот проект отображает таймер, отсчитывающий время до 17 марта. Когда наступит 17 марта, окно будет подсвечено зеленым цветом с надписью "СИВОДНЯ". На следующий день таймер будет перезапущен, и он снова начнет отсчет до 17 марта следующего года.
-
-## Файлы:
-- `index.html` — основной HTML файл
-- `style.css` — файл стилей
-- `script.js` — JavaScript код для работы таймера
+    <script src="script.js"></script>
+</body>
+</html>
