@@ -5,18 +5,13 @@ function countdownToMarch17() {
 
     // Проверка, наступил ли 17 марта
     if (currentDate >= targetDate) {
-        const nextTargetDate = new Date(targetDate.getFullYear() + 1, 2, 17); // Следующий 17 марта
-        targetDate.setFullYear(currentDate.getFullYear());
-    }
-
-    // Разница во времени
-    const timeDifference = targetDate - currentDate;
-
-    if (timeDifference <= 0) {
-        // Если пришел 17 марта, показываем сообщение "Сегодня"
+        // Если сегодня 17 марта или позже, помечаем как "Сегодня"
         document.getElementById("timer").innerHTML = "<p>Сегодня</p>";
         document.getElementById("timer").classList.add("green");
     } else {
+        // Разница во времени
+        const timeDifference = targetDate - currentDate;
+
         // Вычисление оставшегося времени
         const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
         const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -28,8 +23,8 @@ function countdownToMarch17() {
         document.getElementById("timer").classList.remove("green"); // Убираем зеленый фон
     }
 
-    // Обновление каждый день (86400000 миллисекунд = 1 день)
-    setTimeout(countdownToMarch17, 86400000);
+    // Обновление каждую секунду
+    setTimeout(countdownToMarch17, 1000);
 }
 
 // Запуск таймера
