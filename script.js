@@ -9,12 +9,12 @@ function updateTimer() {
         document.getElementById("timer").textContent = "Сегодня";
         document.getElementById("timer-container").classList.add("green-bg"); // Добавляем зеленый фон
     } else {
-        // Если это не 17 марта, то отсчитываем до 17 марта
-        const timeDifference = targetDate - today; // Разница между сегодняшней датой и 17 марта
-        if (timeDifference <= 0) {
-            // Если дата прошла, устанавливаем новый отсчет до следующего 17 марта
+        // Если 17 марта уже прошло, устанавливаем новый отсчет до следующего 17 марта
+        if (today > targetDate) {
             targetDate.setFullYear(currentYear + 1); // Устанавливаем следующий год
         }
+
+        const timeDifference = targetDate - today; // Разница между сегодняшней датой и 17 марта
 
         const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); // Оставшиеся дни
         const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Оставшиеся часы
