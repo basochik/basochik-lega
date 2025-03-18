@@ -1,13 +1,34 @@
-/* Стиль для элемента с таймером */
-#timer {
-    font-size: 24px; /* Размер текста */
-    padding: 10px;   /* Отступы вокруг текста */
-    text-align: center; /* Выравнивание текста по центру */
-    border-radius: 5px; /* Округлые углы */
+/* Общие стили для страницы */
+body {
+    margin: 0;
+    height: 100vh; /* Занимает всю высоту экрана */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif; /* Шрифт */
+    background-color: #f4f4f4; /* Цвет фона */
 }
 
-/* Стиль для фона с зеленым цветом */
+/* Контейнер для таймера */
+#timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Стиль для текста таймера */
+#timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Стиль для зеленого фона */
 .green-bg {
-    background-color: green; /* Зеленый фон */
-    color: white; /* Белый цвет текста */
+    background-color: green;
+    color: white;
 }
