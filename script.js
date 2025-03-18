@@ -26,7 +26,7 @@
 
             // Если сегодня 17 марта, показываем "сегодня"
             if (today.getDate() === 17 && today.getMonth() === 2) {
-                document.getElementById("timer").textContent = "Сегодня";
+                document.getElementById("timer").textContent = "сиводня";
                 document.getElementById("timer").classList.add("green-bg");
             } else {
                 // Если это не 17 марта, то отсчитываем до 17 марта
