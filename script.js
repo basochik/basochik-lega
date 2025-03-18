@@ -6,7 +6,7 @@ function updateTimer() {
 
     // Если сегодня 17 марта, показываем "Сегодня"
     if (today.getDate() === 17 && today.getMonth() === 2) {
-        document.getElementById("timer").textContent = "Сегодня";
+        document.getElementById("timer").textContent = "сиводня🎉";
         document.getElementById("timer-container").classList.add("green-bg"); // Добавляем зеленый фон
     } else {
         // Если 17 марта уже прошло, устанавливаем новый отсчет до следующего 17 марта
