@@ -1,31 +1,53 @@
-// Функция для обновления таймера
-function countdownToMarch17() {
-    const targetDate = new Date('2025-03-17T00:00:00'); // 17 марта 2025 года
-    const currentDate = new Date();
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таймер до 17 марта</title>
+    <style>
+        #timer {
+            font-size: 24px;
+            padding: 10px;
+        }
+        .green-bg {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="timer"></div>
 
-    // Проверка, наступил ли 17 марта
-    if (currentDate >= targetDate) {
-        // Если сегодня 17 марта или позже, помечаем как "Сегодня"
-        document.getElementById("timer").innerHTML = "<p>сиводня🎉</p>";
-        document.getElementById("timer").classList.add("green");
-    } else {
-        // Разница во времени
-        const timeDifference = targetDate - currentDate;
+    <script>
+        function updateTimer() {
+            const today = new Date();
+            const currentYear = today.getFullYear();
+            const targetDate = new Date(currentYear, 2, 17); // 17 марта (месяц в JS от 0 до 11)
 
-        // Вычисление оставшегося времени
-        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+            // Если сегодня 17 марта, показываем "сегодня"
+            if (today.getDate() === 17 && today.getMonth() === 2) {
+                document.getElementById("timer").textContent = "Сегодня";
+                document.getElementById("timer").classList.add("green-bg");
+            } else {
+                // Если это не 17 марта, то отсчитываем до 17 марта
+                const timeDifference = targetDate - today;
+                if (timeDifference <= 0) {
+                    // Если дата прошла, устанавливаем новый отсчет до следующего 17 марта
+                    targetDate.setFullYear(currentYear + 1);
+                }
 
-        // Обновление таймера
-        document.getElementById("countdown").innerHTML = `Осталось: ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;
-        document.getElementById("timer").classList.remove("green"); // Убираем зеленый фон
-    }
+                const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-    // Обновление каждую секунду
-    setTimeout(countdownToMarch17, 1000);
-}
+                document.getElementById("timer").textContent = `${days} дней ${hours} часов ${minutes} минут ${seconds} секунд до 17 марта`;
+                document.getElementById("timer").classList.remove("green-bg");
+            }
+        }
 
-// Запуск таймера
-countdownToMarch17();
+        setInterval(updateTimer, 1000); // Обновляем каждую секунду
+        updateTimer(); // Вызовем один раз, чтобы сразу показать результат
+    </script>
+</body>
+</html>
