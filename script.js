@@ -7,7 +7,7 @@ function updateTimer() {
     // Если сегодня 17 марта, показываем "Сегодня"
     if (today.getDate() === 17 && today.getMonth() === 2) {
         document.getElementById("timer").textContent = "Сегодня";
-        document.getElementById("timer").classList.add("green-bg");
+        document.getElementById("timer-container").classList.add("green-bg"); // Добавляем зеленый фон
     } else {
         // Если это не 17 марта, то отсчитываем до 17 марта
         const timeDifference = targetDate - today; // Разница между сегодняшней датой и 17 марта
@@ -21,8 +21,8 @@ function updateTimer() {
         const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60)); // Оставшиеся минуты
         const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000); // Оставшиеся секунды
 
-        document.getElementById("timer").textContent = `${days} дней ${hours} часов ${minutes} минут ${seconds} секунд до 17 марта`;
-        document.getElementById("timer").classList.remove("green-bg");
+        document.getElementById("timer").textContent = `Осталось ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд до 17 марта`;
+        document.getElementById("timer-container").classList.remove("green-bg"); // Убираем зеленый фон
     }
 }
 
