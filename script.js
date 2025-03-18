@@ -21,7 +21,8 @@ function updateTimer() {
         const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60)); // Оставшиеся минуты
         const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000); // Оставшиеся секунды
 
-        document.getElementById("timer").textContent = `Осталось ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд до 17 марта`;
+        // Выводим время без дефисов и без фразы "до 17 марта"
+        document.getElementById("timer").textContent = `Осталось ${days} дней ${hours} часов ${minutes} минут ${seconds} секунд`;
         document.getElementById("timer-container").classList.remove("green-bg"); // Убираем зеленый фон
     }
 }
